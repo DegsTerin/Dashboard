@@ -1,4 +1,4 @@
-# Dashboards
+# Dashboard
 
 https://data-visualization-dashboards.streamlit.app/
 
