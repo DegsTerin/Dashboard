@@ -82,7 +82,8 @@ If it doesn’t appear, reinstall Git.
 Windows / macOS
 
 git clone https://github.com/DegsTerin/Dashboard.git
-cd imersao-dados-python-alura-2025
+
+cd Dashboard
 
 4) Create and activate a virtual environment
 
