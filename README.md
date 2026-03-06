@@ -7,6 +7,12 @@ Supports dynamic filtering, data download, and automatic insights on salary tren
 Data sourced from public repositories (Kaggle / GitHub), with outliers handled for visualisation purposes. 
 The dashboard contains multiple pages with different analyses and metrics.
 
+## Support
+
+If this project helps you, consider sponsoring ongoing development:
+
+- GitHub Sponsors: `https://github.com/sponsors/DegsTerin`
+
 
 https://dev-dashboard.streamlit.app/
 
