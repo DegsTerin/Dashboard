@@ -1,125 +1,107 @@
 # Dashboard
 
-Interactive IT salary dashboard providing detailed analysis of compensation by year, experience level, employment type, and company size. 
-Values can be displayed in USD or converted to EUR (fixed rate 0.92). 
-Features graphical visualisations of salary distribution, top job titles, remote work proportion, and job title comparisons. 
-Supports dynamic filtering, data download, and automatic insights on salary trends. 
-Data sourced from public repositories (Kaggle / GitHub), with outliers handled for visualisation purposes. 
-The dashboard contains multiple pages with different analyses and metrics.
+[![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Plotly](https://img.shields.io/badge/Charts-Plotly-3F4F75?logo=plotly&logoColor=white)](https://plotly.com/python/)
+[![Sponsor](https://img.shields.io/badge/Sponsor-DegsTerin-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DegsTerin)
 
+Interactive IT salary dashboard built with Streamlit, Pandas, and Plotly.
+It helps explore compensation trends by year, experience level, employment type, company size, remote work ratio, and job title comparisons.
+
+## Live Demo
 
 https://dev-dashboard.streamlit.app/
 
-<img width="1917" height="938" alt="image" src="https://github.com/user-attachments/assets/1d42bc76-0ea1-4676-80c9-0c964724a8e3" />
+## Preview
 
+<img width="1917" height="938" alt="Dashboard preview" src="https://github.com/user-attachments/assets/1d42bc76-0ea1-4676-80c9-0c964724a8e3" />
 
+## Highlights
 
-Complete setup guide (Windows or macOS) — Python 3.12 + Streamlit
-1) Install Python 3.12
+- Explore salary data across multiple years
+- Filter by experience level, employment type, and company size
+- Compare remote work distribution and top job titles
+- Switch display currency between USD and EUR
+- View multiple analysis pages in one Streamlit app
 
-Windows
+## Tech Stack
 
-Download: https://www.python.org/downloads/latest/python3.12/
+- Python
+- Streamlit
+- Pandas
+- Plotly
 
-Download Python 3.12.
+## Project Structure
 
-Run the installer, tick Add Python to PATH, then click Install Now.
+```text
+Dashboard/
+|-- Data/
+|   `-- Salaries.csv
+|-- pages/
+|   |-- 1_Main_Courts.py
+|   |-- 2_Overview.py
+|   |-- 3_Work_Mode.py
+|   `-- 4_Role_Comparison.py
+|-- Home.py
+`-- requirements.txt
+```
 
-Check in Command Prompt or PowerShell:
+## Run Locally
 
-python --version
+1. Install Python 3.12 or newer.
+2. Clone the repository:
 
-
-Expected: Python 3.12.x
-If it doesn’t appear, you likely didn’t tick PATH. Reinstall Python and tick it.
-
-macOS
-
-Download: https://www.python.org/ftp/python/3.12.10/python-3.12.10-macos11.pkg
-
-Open the .pkg and follow the installer (Continue → Install).
-
-Check in Terminal:
-
-python3 --version
-
-
-Expected: Python 3.12.x
-If it doesn’t appear, Python wasn’t installed correctly.
-
-2) Install Git
-
-Windows
-
-Download: https://git-scm.com/download/win
-
-Run the installer and follow the defaults (Next → Next → Finish).
-
-Check:
-
-git --version
-
-
-Expected: git version 2.xx.x
-If it doesn’t appear, reinstall Git.
-
-macOS
-
-Install instructions: https://git-scm.com/install/mac
-
-Follow the standard installer steps.
-
-Check:
-
-git --version
-
-
-Expected: git version 2.xx.x
-If it doesn’t appear, reinstall Git.
-
-3) Clone the project
-
-Windows / macOS
-
+```bash
 git clone https://github.com/DegsTerin/Dashboard.git
-
 cd Dashboard
+```
 
-4) Create and activate a virtual environment
+3. Create and activate a virtual environment.
 
-Windows (Command Prompt / PowerShell)
+Windows PowerShell:
 
+```powershell
 python -m venv .venv
 .venv\Scripts\Activate
+```
 
+If execution is blocked:
 
-If PowerShell blocks activation:
-
+```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
+macOS or Linux:
 
-macOS (Terminal)
-
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
-5) Upgrade pip
+4. Install dependencies:
 
-Windows / macOS
-
+```bash
 python -m pip install --upgrade pip
-
-6) Install dependencies
-
-Windows / macOS
-
 pip install -r requirements.txt
+```
 
-7) Run Streamlit
+5. Start the app:
 
-Windows / macOS
+```bash
+streamlit run Home.py
+```
 
-streamlit run app.py
+Open the local URL shown in the terminal, usually `http://localhost:8501`.
 
+## Data Notes
 
-Open the link shown in the terminal (usually http://localhost:8501).
+- The application reads salary data from `Data/Salaries.csv`
+- The main page also supports loading the dataset from the GitHub raw URL
+- EUR values use a fixed conversion rate from USD for display purposes
+
+## Support
+
+If this project helps you, consider supporting ongoing development:
+
+- GitHub Sponsors: `https://github.com/sponsors/DegsTerin`
+
