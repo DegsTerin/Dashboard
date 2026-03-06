@@ -11,7 +11,7 @@ from pathlib import Path
 # Page Configuration
 # ===============================
 st.set_page_config(
-    page_title="Data Area Salary Dashboard",
+    page_title="Interactive Data Analytics",
     page_icon="📊",
     layout="wide",
 )
@@ -29,7 +29,7 @@ st.cache_data.clear()
 def load_data():
     # URL (production / GitHub)
     return pd.read_csv(
-        "https://raw.githubusercontent.com/DegsTerin/Dashboard/refs/heads/main/Data/Salaries.csv"
+        "https://raw.githubusercontent.com/DegsTerin/Interactive-Data-Analytics/refs/heads/main/Data/Salaries.csv"
     )
 
     # LOCAL (uncomment for local testing)
@@ -109,7 +109,7 @@ currency_symbol = "$" if currency == "USD" else "€"
 # ===============================
 # Main Content
 # ===============================
-st.title("🎲 Data Area Salary Dashboard")
+st.title("🎲 Interactive Data Analytics")
 st.markdown("Use the filters on the left to refine the analysis.")
 
 # ===============================
@@ -320,7 +320,7 @@ st.sidebar.download_button(
 # ===============================
 # ABOUT
 # ===============================
-with st.expander("ℹ️ About the Dashboard", expanded=True):
+with st.expander("ℹ️ About Interactive Data Analytics", expanded=True):
     st.markdown("""
     - Data Source: Kaggle / GitHub
     - Values expressed in annual USD

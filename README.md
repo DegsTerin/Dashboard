@@ -1,11 +1,11 @@
-# Dashboard
+# Interactive Data Analytics
 
 [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Plotly](https://img.shields.io/badge/Charts-Plotly-3F4F75?logo=plotly&logoColor=white)](https://plotly.com/python/)
 [![Sponsor](https://img.shields.io/badge/Sponsor-DegsTerin-2563EB?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DegsTerin)
 
-Interactive IT salary dashboard built with Streamlit, Pandas, and Plotly.
+Interactive Data Analytics is an IT salary dashboard built with Streamlit, Pandas, and Plotly.
 It helps explore compensation trends by year, experience level, employment type, company size, remote work ratio, and job title comparisons.
 
 ## Live Demo
@@ -14,7 +14,7 @@ https://dev-dashboard.streamlit.app/
 
 ## Preview
 
-<img width="1917" height="938" alt="Dashboard preview" src="https://github.com/user-attachments/assets/1d42bc76-0ea1-4676-80c9-0c964724a8e3" />
+<img width="1917" height="938" alt="Interactive Data Analytics preview" src="https://github.com/user-attachments/assets/1d42bc76-0ea1-4676-80c9-0c964724a8e3" />
 
 ## Highlights
 
@@ -34,7 +34,7 @@ https://dev-dashboard.streamlit.app/
 ## Project Structure
 
 ```text
-Dashboard/
+Interactive-Data-Analytics/
 |-- Data/
 |   `-- Salaries.csv
 |-- pages/
@@ -52,8 +52,8 @@ Dashboard/
 2. Clone the repository:
 
 ```bash
-git clone https://github.com/DegsTerin/Dashboard.git
-cd Dashboard
+git clone https://github.com/DegsTerin/Interactive-Data-Analytics.git
+cd Interactive-Data-Analytics
 ```
 
 3. Create and activate a virtual environment.
