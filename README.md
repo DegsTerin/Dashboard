@@ -3,7 +3,7 @@
 [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Plotly](https://img.shields.io/badge/Charts-Plotly-3F4F75?logo=plotly&logoColor=white)](https://plotly.com/python/)
-[![Sponsor](https://img.shields.io/badge/Sponsor-DegsTerin-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DegsTerin)
+[![Sponsor](https://img.shields.io/badge/Sponsor-DegsTerin-2563EB?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/DegsTerin)
 
 Interactive IT salary dashboard built with Streamlit, Pandas, and Plotly.
 It helps explore compensation trends by year, experience level, employment type, company size, remote work ratio, and job title comparisons.
