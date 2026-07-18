@@ -1,5 +1,7 @@
 # Interactive Data Analytics
 
+[![Quality](https://github.com/DegsTerin/Interactive-Data-Analytics/actions/workflows/quality.yml/badge.svg)](https://github.com/DegsTerin/Interactive-Data-Analytics/actions/workflows/quality.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Plotly](https://img.shields.io/badge/Charts-Plotly-3F4F75?logo=plotly&logoColor=white)](https://plotly.com/python/)
@@ -93,6 +95,15 @@ streamlit run Home.py
 
 Open the local URL shown in the terminal, usually `http://localhost:8501`.
 
+## Quality Checks
+
+The automated test suite validates the local dataset schema and representative numeric values. GitHub Actions also compiles the Python sources and verifies installed dependencies.
+
+```bash
+python -m unittest discover -s tests -v
+python -m compileall Home.py pages tests
+```
+
 ## Data Notes
 
 - The application reads salary data from `Data/Salaries.csv`
@@ -104,4 +115,8 @@ Open the local URL shown in the terminal, usually `http://localhost:8501`.
 If this project helps you, consider supporting ongoing development:
 
 - GitHub Sponsors: `https://github.com/sponsors/DegsTerin`
+
+## License
+
+This project is released under the [MIT License](LICENSE).
 
