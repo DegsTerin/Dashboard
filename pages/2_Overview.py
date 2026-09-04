@@ -3,8 +3,14 @@
 # ===============================
 
 import streamlit as st
-import pandas as pd
 import plotly.express as px
+
+from analytics_utils import (
+    filter_salary_data,
+    load_salary_data,
+    validate_dataset,
+    with_display_salary,
+)
 
 # ===============================
 # GLOBAL VISUAL CONFIGURATION
@@ -23,31 +29,17 @@ px.defaults.color_discrete_sequence = PALETTE
 # Data Loading
 # ===============================
 
-# Clear cache when switching data source manually
-st.cache_data.clear()
-
-@st.cache_data
-def load_data():
-    # URL (production / GitHub)
-    return pd.read_csv(
-        "https://raw.githubusercontent.com/DegsTerin/Interactive-Data-Analytics/refs/heads/main/Data/Salaries.csv"
-    )
-
-    # LOCAL (uncomment for local testing)
-    #return pd.read_csv("Data/Salaries.csv")
-
-df = load_data()
+df = load_salary_data()
 
 # ===============================
 # DATA VALIDATION
 # ===============================
-REQUIRED_COLUMNS = {
-    "Year", "Experience_Level", "Employment_Type", "Company_Size",
-    "Salary_In_Usd", "Job_Title", "Remote_Ratio", "Employee_Residence_Iso3"
-}
-
-if not REQUIRED_COLUMNS.issubset(df.columns):
-    st.error("Invalid or incomplete dataset. Missing required columns.")
+missing_columns = validate_dataset(df)
+if missing_columns:
+    st.error(
+        "Invalid or incomplete dataset. Missing required columns: "
+        + ", ".join(sorted(missing_columns))
+    )
     st.stop()
 
 # ===============================
@@ -65,20 +57,10 @@ company_sizes = st.sidebar.multiselect("Company Size", sorted(df["Company_Size"]
 # ===============================
 # FILTER WITH CACHE
 # ===============================
-@st.cache_data
-def filter_data(df, years, experience_levels, employment_types, company_sizes):
-    return df[
-        df["Year"].isin(years) &
-        df["Experience_Level"].isin(experience_levels) &
-        df["Employment_Type"].isin(employment_types) &
-        df["Company_Size"].isin(company_sizes)
-    ]
-
-df_filtered = filter_data(df, years, experience_levels, employment_types, company_sizes)
-
-# Simple USD \u2192 EUR conversion (fixed, intentional)
-EXCHANGE_RATE_EUR = 0.92
-df_filtered["Display_Salary"] = df_filtered["Salary_In_Usd"] if currency == "USD" else df_filtered["Salary_In_Usd"] * EXCHANGE_RATE_EUR
+df_filtered = filter_salary_data(
+    df, years, experience_levels, employment_types, company_sizes
+)
+df_filtered = with_display_salary(df_filtered, currency)
 
 # Determine the currency symbol
 currency_symbol = "$" if currency == "USD" else "€"
